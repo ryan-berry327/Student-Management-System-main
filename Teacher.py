@@ -61,27 +61,3 @@ class Teacher(Person):
             return True
         else:
             return False
-
-# Sample testing section at the bottom of Teacher.py
-if __name__ == "__main__":
-    # Create a Teacher object
-    teacher1 = Teacher("John Doe", 40, 101, "T001", ["Math", "Science"], "9 AM - 11 AM")
-    
-    # Assigning courses
-    print(teacher1.assign_course("History"))  # Should add History
-    print(teacher1.assign_course("Math"))     # Should indicate Math already exists
-    
-    # Removing courses
-    print(teacher1.remove_course("Science"))  # Should remove Science
-    print(teacher1.remove_course("English"))  # Should fail as English is not assigned
-    
-    # Assigning grades to students
-    student1 = Student("Alice", 18, 3001, {}, [])
-    student1.enroll("Math")  # Enroll Alice in Math
-    print(teacher1.assign_grade(student1, "Math", 90))  # Pass course code and grade
-    
-    # View student's grades
-    teacher1.view_student_grades(student1, "Math")  # Corrected method call
-    
-    # Checking student's enrollment in course
-    print(teacher1.is_student_in_course(student1, "Math"))  # Should return True
